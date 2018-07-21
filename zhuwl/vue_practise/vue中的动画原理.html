@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <title>vue中的css的动画原理</title>
+  <style>
+    .fadee-enter,
+    .fadee-leave-to {
+      opacity: 0;
+    }
+
+    .fadee-enter-active,
+    .fadee-leave-active {
+      transition: opacity 3s;
+    }
+  </style>
+</head>
+
+<body>
+  <p>vue中的css的动画原理</p>
+  <div id="app">
+    <transition name="fadee">
+      <div v-if="show">hello world</div>
+    </transition>
+
+    <button @click="handleClikc">click me</button>
+  </div>
+
+  <script>
+
+
+    Vue.component('child_one', {
+      template: ` <div v-once >
+                  child_one
+                  </div>`,
+    })
+
+
+
+
+    var app = new Vue({
+      el: '#app',
+      data: {
+        show: true,
+      },
+      methods: {
+        handleClikc: function () {
+          this.show = !this.show;
+        }
+      }
+    })
+  </script>
+  </body_content>
+
+</html>

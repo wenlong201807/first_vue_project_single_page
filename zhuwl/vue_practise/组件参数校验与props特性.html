@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <title>组件参数校验与props特性</title>
+  <style>
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <child content="hello vue "></child>
+  </div>
+
+  <script>
+
+    Vue.component('child', {
+      props: {// 限制传值类型要求
+        content: {
+          type: String,
+          require: true,
+          default: 'default value',
+          validator: function (value) {
+            return (value.length > 5)
+          }
+        },
+
+      },
+      template: '<div>{{content}}</div>',
+    })
+    var app = new Vue({
+      el: '#app',
+      data: {
+
+      },
+      methods: {
+
+      }
+    })
+  </script>
+</body>
+
+</html>

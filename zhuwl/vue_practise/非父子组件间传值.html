@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <title>给非父子组件传值</title>
+  <style>
+  </style>
+</head>
+
+<body>
+  <p>父子组件间传值，bus，总线，发布订阅模式，观察者模式</p>
+  <div id="app">
+    <child content="zhu"></child>
+    <child content="wen"></child>
+    <child content="long"></child>
+  </div>
+
+  <script>
+    // 原型中挂着一个bus ，所有的new Vue() 都能共享
+    Vue.prototype.bus = new Vue()
+    Vue.component('child', {
+      data: function () {
+        return {
+          selfContent: this.content,
+        }
+      },
+      props: {
+        content: {
+          type: String,
+        }
+      },
+      template: '<div @click="handleClikc" >{{selfContent}}</div>',
+      methods: {
+        handleClikc: function () {
+          // alert(this.content)
+          this.bus.$emit('change', this.selfContent)
+        }
+      },
+      mounted: function () {
+        var this_ = this;
+        this.bus.$on('change', function (msg) {
+          this_.selfContent = msg;
+        })
+      }
+    })
+    var app = new Vue({
+      el: '#app',
+      data: {
+
+      },
+      methods: {
+
+      }
+    })
+  </script>
+</body>
+
+</html>

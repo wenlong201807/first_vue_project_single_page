@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <title>给组件绑定原生事件</title>
+  <style>
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <!-- 父组件中绑定的**需要在子组件中声明以下才可以生效**很繁杂**已经删除 -->
+    <!-- 以下为原生的父组件的点击事件 -->
+    <child @click.native="handleClick"></child>
+  </div>
+
+  <script>
+
+    Vue.component('child', {
+      props: {
+
+
+      },
+      // 子组件中绑定的
+      template: '<div>click me</div>',
+
+    })
+    var app = new Vue({
+      el: '#app',
+      data: {
+
+      },
+      methods: {
+        handleClick: function () {
+          alert(123)
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>

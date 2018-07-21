@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <link rel="stylesheet" href="./animate.css">
+  <title>vue中使用animate.css_前奏</title>
+  <style>
+    @keyframes bounce-in {
+      0% {
+        transform: scale(0);
+      }
+      50% {
+        transform: scale(1.5);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    .my_enter {
+      transform-origin: left center;
+      animation: bounce-in 1s;
+    }
+
+    .my_leave {
+      transform-origin: left center;
+      animation: bounce-in 1s reverse;
+    }
+  </style>
+</head>
+
+<body>
+  <p>vue中使用animate.css_前奏</p>
+  <div id="app">
+    <transition name="fadee" enter-active-class="my_enter" leave-active-class="my_leave">
+      <div v-if="show">hello world</div>
+    </transition>
+    <button @click="handleClikc">toggle</button>
+  </div>
+
+  <script>
+
+    var app = new Vue({
+      el: '#app',
+      data: {
+        show: true,
+      },
+      methods: {
+        handleClikc: function () {
+          this.show = !this.show;
+        }
+      }
+    })
+  </script>
+  </body_content>
+
+</html>

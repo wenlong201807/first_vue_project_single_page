@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <link rel="stylesheet" href="./animate.css">
+  <title>vue中使用animate.css</title>
+  <style>
+    .fade-enter,.fade-leave-to{
+      opacity:0;
+    }
+    .fade-enter-active,.fade-leave-active{
+    transition:  opacity 3s;
+    }
+  </style>
+</head>
+
+<body>
+  <p>vue中使用animate.css_自定义动画与库中的动画，自定义时间type="transition"</p>
+  <div id="app">
+    <transition type="transition" name="fadee" appear enter-active-class="animated swing fade-enter-active" leave-active-class="animated shake fade-leave-active"
+      appear-active-class="animated swing">
+      <div v-if="show">hello world</div>
+    </transition>
+
+    <button @click="handleClikc">toggle</button>
+  </div>
+
+  <script>
+
+    var app = new Vue({
+      el: '#app',
+      data: {
+        show: true,
+      },
+      methods: {
+        handleClikc: function () {
+          this.show = !this.show;
+        }
+      }
+    })
+  </script>
+  </body_content>
+
+</html>

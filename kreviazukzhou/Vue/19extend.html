@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+
+
+<body>
+    <div id="app">
+
+    </div>
+    <script>
+        var Profile = Vue.extend({
+            //创建新的模板，所有字实例都会拥有此模板，
+            template: '<p>{{firstName}} {{lastName}} aka {{alias}}</p>',
+            data: function() { //创建Vue的实例时，data可以是object，也可以是function，
+                return { //但是在扩展的时候，data必须是一个函数，而且要有返回值
+                    firstName: 'Walter',
+                    lastName: 'White',
+                    alias: 'Heisenberg'
+                }
+            }
+        });
+        // 创建Profile实例，并挂载到一个元素上
+        // new Profile().$mount("#app");
+        // .$mount()方法跟设置el属性效果是一样的
+        var app = new Profile({
+            el: "#app"
+        })
+    </script>
+</body>
+
+</html>

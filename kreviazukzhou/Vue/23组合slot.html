@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+
+
+<body>
+    <div id="app">
+        <!-- 在子组件中通过为多个slot进行命名，来接手父组件的不同内容的数据 -->
+        <nba-all-star c='奥尼尔' pf='加内特'>
+            <span slot='sf'>皮尔斯</span>
+            <span slot='sg'>雷阿伦</span>
+            <span slot='pg'>隆多</span>
+        </nba-all-star>
+    </div>
+    <script>
+        Vue.component('nba-all-star', {
+            props: ['c', 'pf'],
+            template: `
+            <div>
+              <div>中锋：{{c}}</div>
+              <div>大前锋：{{pf}}</div>
+              <div>小前锋：
+                <slot name='sf'></slot>
+              </div>
+              <div>得分后卫：
+                <slot name='sg'></slot>
+              </div>
+              <div>控球后卫：
+                <slot name='pg'></slot>
+              </div>
+            </div>
+          `
+        });
+        var app = new Vue({
+            el: "#app",
+            data: {
+
+            }
+        });
+    </script>
+</body>
+
+</html>

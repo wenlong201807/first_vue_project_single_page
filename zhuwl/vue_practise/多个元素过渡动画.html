@@ -5,33 +5,31 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.1.0/dist/jquery.min.js"></script> -->
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
   <link rel="stylesheet" href="./animate.css">
-  <title>vue中使用animate.css</title>
+  <title>velocity.js准备</title>
   <style>
-    .fade-enter,
-    .fade-leave-to {
+    .v-enter,
+    v-leave-to {
       opacity: 0;
     }
 
-    .fade-enter-active,
-    .fade-leave-active {
-      transition: opacity 3s;
+    .v-enter-active,
+    .v-leave-active {
+      transition: opacity 1s;
     }
   </style>
 </head>
 
 <body>
-  <p>vue中使用animate.css_自定义动画与库中的动画，自定义时间type="transition"</p>
-  <P>自定义动画时长，将 type="transition" 改为 :duration="{enter:5000,leave:10000}"</P>
   <div id="app">
-    <transition :duration="{enter:5000,leave:10000}" name="fadee" appear enter-active-class="animated swing fade-enter-active"
-      leave-active-class="animated
-      shake fade-leave-active" appear-active-class="animated swing">
-      <div v-if="show">hello world</div>
-    </transition>
-
     <button @click="handleClikc">toggle</button>
+    <transition mode="in-out">
+      <h1 v-if="show" key="hello">hello world</h1>
+      <h1 v-else key="bye">bye hello</h1>
+    </transition>
   </div>
 
   <script>
@@ -44,7 +42,17 @@
       methods: {
         handleClikc: function () {
           this.show = !this.show;
-        }
+        },
+        handleBeforeEnter: function (el) {
+
+        },
+        handleEnter: function (el, done) {
+
+        },
+        handleAfterEnter: function (el) {
+
+        },
+
       }
     })
   </script>

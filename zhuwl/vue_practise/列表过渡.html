@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <title>多组件过渡动画</title>
+  <style>
+    .v-enter,
+    .v-leave-to {
+      opacity: 0;
+    }
+
+    .v-enter-active,
+    .v-leave-active {
+      transition: opacity 1s;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <button @click="handleClikc">add</button>
+    <transition-group>
+      <div v-for="(item, index) of list" :key="index">{{item.title}}**{{item.id}}</div>
+    </transition-group>
+
+  </div>
+
+  <script>
+
+    var count = 0;
+    var app = new Vue({
+      el: '#app',
+      data: {
+        list: []
+
+      },
+      methods: {
+        handleClikc: function () {
+          this.list.push({
+            id: count++,
+            title: 'hello world'
+          })
+        }
+      }
+    })
+  </script>
+  </body_content>
+
+</html>

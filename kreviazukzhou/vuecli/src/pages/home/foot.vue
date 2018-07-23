@@ -1,12 +1,21 @@
 <template>
   <div class="foot">
-    我是foot
+    <div class="box">
+      
+    </div>
   </div>
 </template>
 
 <script>
+// 引入bus
+import Bus from './bus.js'
 export default {
-  name: 'foot'
+  name: 'foot',
+  mounted () {
+    Bus.$on('msg', (e) => {
+      console.log(e)
+    })
+  }
 }
 </script>
 

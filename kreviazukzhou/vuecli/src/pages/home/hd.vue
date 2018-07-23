@@ -12,9 +12,9 @@ export default {
   props: {
     z: Function
   },
-  methods:{
-    send: function() {
-      this.$emit("listenToChild","this is from son")
+  methods: {
+    send: function () {
+      this.$emit('listenToChild', 'this is from son')
     }
   }
 }

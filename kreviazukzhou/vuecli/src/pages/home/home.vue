@@ -36,7 +36,7 @@ export default {
       const zhou = data.zhou[0].name
       console.log(zhou)
     },
-    showMsg: function(data) {
+    showMsg: function (data) {
       console.log(data)
     }
   },

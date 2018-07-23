@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>组件</title>
+  <script src="./js/vue.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <input type="text" v-model='inputValue'>
+    <button v-on:click='add'>提交</button>
+    <ul>
+      <todo-item v-for='item in list'></todo-item>
+    </ul>
+  </div>
+  <script>
+    Vue.component('TodoItem', {
+      template: '<li>todo item</li>'
+    })
+    const app = new Vue({
+      el: '#app',
+      data: {
+        inputValue: '',
+        list: []
+      },
+      methods: {
+        add: function () {
+          this.list.push(this.inputValue),
+            this.inputValue = ''
+        }
+      }
+
+    })
+  </script>
+</body>
+
+</html>

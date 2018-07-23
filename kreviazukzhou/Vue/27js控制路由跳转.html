@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+</head>
+
+
+<body>
+    <div id="app">
+        <input type="button" value="家" @click='changeHome'>
+        <input type="button" value="关于" @click='changeAbout'>
+        <router-view></router-view>
+    </div>
+    <script>
+        //定义home模块
+        var home = {
+            template: `<h1>家</h1>`
+        }
+        var about = {
+            template: `<h1>{{about}}</h1>`,
+            data: function() {
+                return {
+                    about: "关于"
+                }
+            }
+        }
+        var router = new VueRouter({
+            routes: [{
+                path: '/home',
+                component: home
+            }, {
+                path: '/about',
+                component: about
+            }]
+        });
+        // 将路由挂载到跟实例
+        new Vue({
+            el: "#app",
+            methods: {
+                changeHome: function() {
+
+                    router.push('home')
+                },
+                changeAbout: function() {
+                    router.push({
+                        path: 'about'
+                    })
+                }
+            },
+            router
+        })
+    </script>
+</body>
+
+</html>

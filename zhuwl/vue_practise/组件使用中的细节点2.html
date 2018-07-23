@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <title>组件使用中的细节点2</title>
+  <style>
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <table>
+      <tbody>
+        <!-- h5中，tbody必须写tr标签，但是模板使用中却不需要tr标签，所以添加一个is=“row”,解决两者矛盾的问题 -->
+        <tr is="row_tr"></tr>
+        <tr is="row_tr"></tr>
+        <tr is="row_tr"></tr>
+      </tbody>
+    </table>
+    <hr>
+
+  </div>
+
+  <script>
+    // 在组件传值的过程中，data数据要是放在子组件中，必须使用函数的写法，放在根组件中，则使用属性的写法
+
+    Vue.component('row_tr', {
+      data: function () {
+        return {
+          content: 'this is child component data,need use function to express'
+        }
+      },
+      template: '<tr><td>{{content}}</td></tr>'
+    })
+
+    var app = new Vue({
+      el: '#app',
+      data: {
+
+      },
+      methods: {
+
+      }
+    })
+  </script>
+</body>
+
+</html>

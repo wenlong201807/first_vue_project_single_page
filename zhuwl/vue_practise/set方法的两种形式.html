@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <title>set动态渲染数据</title>
+  <style>
+  </style>
+</head>
+
+<body>
+  <div id="app">
+
+    <!-- 也可以循环对象 -->
+    <div v-for="(item ,key ,index) of userInfo">
+      {{item}}**{{key}}**{{index}}
+    </div>
+  </div>
+  <script>
+    // set可以时实例，也可以的方法app.set(3个参数)***app.$set(3个参数)
+    var app = new Vue({
+      el: '#app',
+      data: {
+
+        userInfo: {
+          name: 'wenlong',
+          age: 22,
+          gender: 'male',
+          salary: 'secret'
+        }
+      },
+      methods: {
+
+      }
+    })
+  </script>
+</body>
+
+</html>

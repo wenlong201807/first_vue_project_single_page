@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+</head>
+
+
+<body>
+
+    <div id="app">
+        <nav>
+            <router-link to="/user/9/12">用户</router-link>
+            <router-link to="/stu/malun">学生</router-link>
+            <hr>
+        </nav>
+        <router-view></router-view>
+    </div>
+    <script>
+        var user = {
+            template: `
+            <div>
+                <div>user id is:{{$route.params.id}}</div>
+                <div>user age is:{{$route.params.age}}</div>
+            </div>
+           
+          `
+        };
+        var stu = {
+            template: `
+                  <div>
+                    <h2>{{getName}}</h2>
+                  </div>
+                  `,
+            computed: {
+                getName: function() {
+                    return this.$route.params.name
+                }
+            }
+        };
+        //创建router实例
+        var router = new VueRouter({
+            routes: [{
+                // 路由规则，规定第一个为id
+                path: '/user/:id/:age',
+                component: user
+            }, {
+                // 路由规则，规定第一个为name
+                path: '/stu/:name',
+                component: stu
+            }]
+        })
+        new Vue({
+            el: "#app",
+            router
+        })
+    </script>
+</body>
+
+</html>

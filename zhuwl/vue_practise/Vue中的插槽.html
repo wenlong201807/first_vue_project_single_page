@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <title>Vue中的插槽部分</title>
+  <style>
+  </style>
+</head>
+
+<body>
+  <p>Vue中的插槽部分</p>
+  <div id="app">
+    <body_content>
+
+      <div class="footer" slot="footer">footer</div>
+    </body_content>
+
+  </div>
+
+  <script>
+    // 原型中挂着一个bus ，所有的new Vue() 都能共享
+
+    Vue.component('body_content', {
+      template: `<div>
+          <slot name="header" >
+              <h1>我是具名插槽，默认值</h1>
+          </slot>
+                  <p class="content_class">zhuwenlong</p>
+                  <slot name="footer" >我是插槽，可以设置默认内容的</slot>
+                  </div>`,
+    })
+    var app = new Vue({
+      el: '#app',
+      data: {
+
+      },
+      methods: {
+
+      }
+    })
+  </script>
+  </body_content>
+
+</html>

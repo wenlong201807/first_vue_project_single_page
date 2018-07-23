@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <title>动态组件与v-once指令</title>
+  <style>
+  </style>
+</head>
+
+<body>
+  <p>动态组件与v-once指令</p>
+  <div id="app">
+    <!-- 动态组件写法更简结 -->
+    <!-- <component :is='type'></component> -->
+    <!-- 等效写法，片复杂 ，但是可以使用v-once**静态组件的切换可以使用缓存，提高性能-->
+    <child_one v-if="type ==='child_one'"></child_one>
+    <child_two v-if="type ==='child_two'"></child_two>
+    <button @click="handleBtnClikc">change</button>
+  </div>
+
+  <script>
+    // 原型中挂着一个bus ，所有的new Vue() 都能共享
+
+    Vue.component('child_one', {
+      template: ` <div v-once >
+                  child_one
+                  </div>`,
+    })
+
+    Vue.component('child_two', {
+      template: ` <div v-once >
+                  child_two
+                  </div>`,
+    })
+
+
+    var app = new Vue({
+      el: '#app',
+      data: {
+        type: 'child_one'
+      },
+      methods: {
+        handleBtnClikc: function () {
+          this.type = this.type === 'child_one' ? 'child_two' : 'child_one';
+        }
+      }
+    })
+  </script>
+  </body_content>
+
+</html>

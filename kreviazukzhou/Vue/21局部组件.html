@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+
+
+<body>
+    <div id="app">
+
+        <my-conponent></my-conponent>
+    </div>
+    <script>
+        var Child = {
+            template: `
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis alias deleniti provident, voluptatibus suscipit rerum ab impedit quae temporibus repellendus tenetur perspiciatis, possimus id aspernatur omnis odit dicta officiis tempora.</ps>
+        `
+        }
+        new Vue({
+            el: "#app",
+            data: {
+
+            },
+            components: {
+                // 将只在父模板可用
+                'my-conponent': Child
+            }
+        })
+    </script>
+</body>
+
+</html>

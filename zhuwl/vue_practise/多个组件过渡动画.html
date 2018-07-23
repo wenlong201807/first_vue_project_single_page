@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.1.0/dist/jquery.min.js"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+  <link rel="stylesheet" href="./animate.css">
+  <title>多组间过渡动画</title>
+  <style>
+    .v-enter,
+    v-leave-to {
+      opacity: 0;
+    }
+
+    .v-enter-active,
+    .v-leave-active {
+      transition: opacity 1s;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <button @click="handleClikc">toggle</button>
+    <transition mode="out-in">
+      <component :is="type"></component>
+    </transition>
+  </div>
+
+  <script>
+
+    Vue.component('child', {
+      template: `<div>child</div>`,
+    })
+
+    Vue.component('child_one', {
+      template: `<div>child_one</div>`,
+    })
+
+    var app = new Vue({
+      el: '#app',
+      data: {
+        type: 'child'
+      },
+      methods: {
+        handleClikc: function () {
+          this.type = this.type === 'child' ? 'child_one' : 'child';
+        },
+      }
+    })
+  </script>
+  </body_content>
+
+</html>

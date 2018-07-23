@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.1.0/dist/jquery.min.js"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+  <link rel="stylesheet" href="./animate.css">
+  <title>velocity.js准备</title>
+  <style>
+    .v-enter,
+    v-leave-to {
+      opacity: 0;
+    }
+
+    .v-enter-active,
+    .v-leave-active {
+      transition: opacity 1s;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <button @click="handleClikc">toggle</button>
+    <transition mode="in-out">
+      <h1 v-if="show" key="hello">hello world</h1>
+      <h1 v-else key="bye">bye hello</h1>
+    </transition>
+  </div>
+
+  <script>
+
+    var app = new Vue({
+      el: '#app',
+      data: {
+        show: true,
+      },
+      methods: {
+        handleClikc: function () {
+          this.show = !this.show;
+        },
+        handleBeforeEnter: function (el) {
+
+        },
+        handleEnter: function (el, done) {
+
+        },
+        handleAfterEnter: function (el) {
+
+        },
+
+      }
+    })
+  </script>
+  </body_content>
+
+</html>

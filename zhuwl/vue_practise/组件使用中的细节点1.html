@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <title>样式绑定方式</title>
+  <style>
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <table>
+      <tbody>
+        <!-- h5中，tbody必须写tr标签，但是模板使用中却不需要tr标签，所以添加一个is=“row”,解决两者矛盾的问题 -->
+        <tr is="row_tr"></tr>
+        <tr is="row_tr"></tr>
+        <tr is="row_tr"></tr>
+      </tbody>
+    </table>
+    <hr>
+    <!-- 同理，在ul li标签中也是如此 -->
+    <ul>
+      <li is="row_li"></li>
+      <li is="row_li"></li>
+      <li is="row_li"></li>
+      <li is="row_li"></li>
+      <li is="row_li"></li>
+    </ul>
+    <hr>
+    <select>
+      <option value="" is="row_option"></option>
+      <option value="" is="row_option"></option>
+      <option value="" is="row_option"></option>
+    </select>
+  </div>
+
+  <script>
+    Vue.component('row_tr', {
+      template: '<tr><td>this is a row_tr component</td></tr>'
+    })
+    Vue.component('row_li', {
+      template: '<span>this is a row_li component <br/> </span>'
+    })
+    Vue.component('row_option', {
+      template: '<span>this is a row_option component <br/> </span>'
+    })
+    var app = new Vue({
+      el: '#app',
+      data: {
+
+      },
+      methods: {
+
+      }
+    })
+  </script>
+</body>
+
+</html>

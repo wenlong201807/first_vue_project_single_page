@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/swiper.min.css">
+  <link rel="stylesheet" href="https://cdn.staticfile.org/animate.css/3.5.2/animate.min.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="shortcut icon" type="images/x-icon" href="./img/favicon.ico">
+  <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+  <script src="./js/swiper.min.js"></script>
+  <script src="http://api.map.baidu.com/api?v=2.0&ak=A1LU7iHS0avqQwPLAxbhKn0UYSQCuRVH"></script>
+  <script src="./js/jquery.baiduMap.min.js"></script>
+  <script src="./js/index.js"></script>
+  <title>AICODER</title>
+</head>
+
+<body>
+  <!-- S顶部 -->
+  <div class="header">
+    <!-- S logo -->
+    <div class="logo fl">
+      <h1>AICODER大学生实习中心</h1>
+      <a href="http://aicoder.com/">
+        <img src="./img/logo.png" alt="logo" title="AICODER实习">
+      </a>
+    </div>
+    <!-- E logo -->
+
+    <!-- S 用户导航 -->
+    <div class="user-nav fr">
+      <a href="javascript:;" class="radio">AICODER广播</a>
+      <a href="javascript:;" class="login">登录</a>
+      <a href="javascript:;" class="registered">注册</a>
+    </div>
+    <!-- E 用户导航 -->
+  </div>
+  <!-- E顶部 -->
+
+  <!-- S banner -->
+  <div class="banner">
+    <a href="javascript:;">
+      <img src="./img/banner.jpg" alt="">
+    </a>
+    <div class="banner-content">
+      <h2>AICODER</h2>
+      <h3>线上全栈实习报名</h3>
+      <div class="banner-input clearfix">
+        <input type="text" placeholder="搜索关键字" class="banner-serach fl">
+        <input type="button" value="搜索" class="banner-btn fl">
+      </div>
+    </div>
+  </div>
+  <!-- E banner -->
+
+  <!-- S在线咨询 -->
+  <div class="online-consulting">
+    <a href="javascript:;">
+      <img src="./img/pa.jpg" alt="">
+    </a>
+  </div>
+  <!-- E 在线咨询 -->
+
+  <!-- S 线上学习报名 -->
+  <div class="online-leraning clearfix">
+    <h2 class="line-title">线上学习报名</h2>
+    <ul class="line-operation clearfix">
+      <li>
+        <a href="javascript:;">
+          <img src="./img/y1.png">
+        </a>
+        <h3>统一招聘</h3>
+        <p>统一招聘专注于IT实习基地，</p>
+        <p> 线上IT课程免费，专注于服务IT行业人员
+        </p>
+      </li>
+      <li>
+        <a href="javascript:;">
+          <img src="./img/y2.png">
+        </a>
+        <h3>统一管理</h3>
+        <p>项目管理，IT技能，任务管理，</p>
+        <p> 项目周期真实控制</p>
+      </li>
+      <li>
+        <a href="javascript:;">
+          <img src="./img/y3.png">
+        </a>
+        <h3>统一培训</h3>
+        <p>前端项目实习，全栈项目实习，</p>
+        <p> Python实习.net实习</p>
+      </li>
+    </ul>
+  </div>
+  <!-- E 线上学习报名 -->
+
+  <!-- S 课程列表 -->
+  <div class="fe-course">
+    <ul class="course-list clearfix ">
+      <li class="active">
+        <h6 class="course-title"></h6>
+        <div class="course-item">
+          <p>gulp</p>
+          <p>requijs</p>
+          <p>art-template</p>
+          <p>ajax</p>
+          <p>淘宝rap</p>
+        </div>
+        <a href="#">咨询详情</a>
+      </li>
+      <li>
+        <h6 class="course-title"></h6>
+        <div class="course-item">
+          <p>教室端</p>
+          <p>学生端</p>
+          <p>后台编辑端</p>
+          <p>jQuery+mvc架构</p>
+          <p>gulp整体工作流</p>
+          <p>前端mvc架构抽象封装</p>
+        </div>
+        <a href="#">咨询详情</a>
+      </li>
+      <li>
+        <h6 class="course-title"></h6>
+        <div class="course-item">
+          <p>webpack</p>
+          <p>ES6+</p>
+          <p>Vue全家桶</p>
+          <p>Vue-cli脚手架</p>
+          <p>axios|fetch</p>
+          <p>单元测试</p>
+        </div>
+        <a href="#">咨询详情</a>
+      </li>
+      <li>
+        <h6 class="course-title"></h6>
+        <div class="course-item">
+          <p>快消首页</p>
+          <p>商铺拜访</p>
+          <p>商铺铺货</p>
+          <p>库存盘点</p>
+          <p>商铺下单</p>
+          <p>json-server后台API</p>
+        </div>
+        <a href="#">咨询详情</a>
+      </li>
+    </ul>
+    <div class="course-btn">
+      <a href="javascript:;" class="btn-lt">&lt;</a>
+      <a href="javascript:;" class="btn-rt">&gt;</a>
+    </div>
+  </div>
+  <!-- E 课程列表 -->
+
+  <!-- AICODER 全栈学习路线图 -->
+  <div class="learn-map">
+    <h2>AICODER 全栈学习路线图</h2>
+    <ul class="map-course">
+      <li class="kk">
+        <div class="map-title">
+          <h3>HTML基础</h3>
+          <p>前端基础环境配置，开发工具快捷键，HTML5基础语法，HTML5各种标签及属性，路径详解，语义化等</p>
+        </div>
+        <div class="map-detail">
+          <a href="javascript:;">^</a>
+          <a href="javascript:;">前端开发环境及配置</a>
+          <a href="javascript:;">前端开发工具及快捷键</a>
+          <a href="javascript:;">HTML5各种标签及属性</a>
+          <a href="javascript:;">HTML的语义化</a>
+          <a href="javascript:;">HTML与CSS、JS的关系</a>
+          <a href="javascript:;">URL协议、路径基础</a>
+          <a href="javascript:;">...</a>
+        </div>
+      </li>
+      <li class="kk">
+        <div class="map-title">
+          <h3>CSS3基础</h3>
+          <p>CSS3基础语法，CSS3各种选择器，CSS3的优先级判断，CSS3文字排版，布局排版，滑动门，常见的兼容处理等</p>
+        </div>
+        <div class="map-detail">
+          <a href="javascript:;">^</a>
+          <a href="javascript:;">前端开发环境及配置</a>
+          <a href="javascript:;">前端开发工具及快捷键</a>
+          <a href="javascript:;">HTML5各种标签及属性</a>
+          <a href="javascript:;">HTML的语义化</a>
+          <a href="javascript:;">HTML与CSS、JS的关系</a>
+          <a href="javascript:;">URL协议、路径基础</a>
+          <a href="javascript:;">...</a>
+        </div>
+      </li>
+      <li class="kk">
+        <div class="map-title">
+          <h3>CSS项目实战-在线教育系统</h3>
+          <p>像素级还原AI或PSD图，项目架构搭建，整体布局，样式重置，各种定位技巧，CSS编写素养等</p>
+        </div>
+        <div class="map-detail">
+          <a href="javascript:;">^</a>
+          <a href="javascript:;">前端开发环境及配置</a>
+          <a href="javascript:;">前端开发工具及快捷键</a>
+          <a href="javascript:;">HTML5各种标签及属性</a>
+          <a href="javascript:;">HTML的语义化</a>
+          <a href="javascript:;">HTML与CSS、JS的关系</a>
+          <a href="javascript:;">URL协议、路径基础</a>
+          <a href="javascript:;">...</a>
+        </div>
+      </li>
+      <li class="kk">
+        <div class="map-title">
+          <h3>JavaScript基础</h3>
+          <p>JavaScript语法，JS函数，对象，表达式，运算符，数组，数学方法，日期对象等</p>
+        </div>
+        <div class="map-detail">
+          <a href="javascript:;">^</a>
+          <a href="javascript:;">前端开发环境及配置</a>
+          <a href="javascript:;">前端开发工具及快捷键</a>
+          <a href="javascript:;">HTML5各种标签及属性</a>
+          <a href="javascript:;">HTML的语义化</a>
+          <a href="javascript:;">HTML与CSS、JS的关系</a>
+          <a href="javascript:;">URL协议、路径基础</a>
+          <a href="javascript:;">...</a>
+        </div>
+      </li>
+      <li class="kk">
+        <div class="map-title">
+          <h3>JavaScript高级</h3>
+          <p>JS内存管理、闭包、原型链、作用域链、执行上下文、变量函数提升、继承模式等</p>
+        </div>
+        <div class="map-detail">
+          <a href="javascript:;">^</a>
+          <a href="javascript:;">前端开发环境及配置</a>
+          <a href="javascript:;">前端开发工具及快捷键</a>
+          <a href="javascript:;">HTML5各种标签及属性</a>
+          <a href="javascript:;">HTML的语义化</a>
+          <a href="javascript:;">HTML与CSS、JS的关系</a>
+          <a href="javascript:;">URL协议、路径基础</a>
+          <a href="javascript:;">...</a>
+        </div>
+      </li>
+      <li class="kk">
+        <div class="map-title">
+          <h3>DOM与BOM详解</h3>
+          <p>DOM的各种结构与API，BOM的接口，各种DOM特效与组件实现等</p>
+        </div>
+        <div class="map-detail">
+          <a href="javascript:;">^</a>
+          <a href="javascript:;">前端开发环境及配置</a>
+          <a href="javascript:;">前端开发工具及快捷键</a>
+          <a href="javascript:;">HTML5各种标签及属性</a>
+          <a href="javascript:;">HTML的语义化</a>
+          <a href="javascript:;">HTML与CSS、JS的关系</a>
+          <a href="javascript:;">URL协议、路径基础</a>
+          <a href="javascript:;">...</a>
+        </div>
+      </li>
+      <li class="kk">
+        <div class="map-title">
+          <h3>jQuery深入全解</h3>
+          <p>选择器、样式操作、DOM操作、动画、事件处理、链式编程、隐式迭代、jQuery插件等</p>
+        </div>
+        <div class="map-detail">
+          <a href="javascript:;">^</a>
+          <a href="javascript:;">前端开发环境及配置</a>
+          <a href="javascript:;">前端开发工具及快捷键</a>
+          <a href="javascript:;">HTML5各种标签及属性</a>
+          <a href="javascript:;">HTML的语义化</a>
+          <a href="javascript:;">HTML与CSS、JS的关系</a>
+          <a href="javascript:;">URL协议、路径基础</a>
+          <a href="javascript:;">...</a>
+        </div>
+      </li>
+      <li class="kk">
+        <div class="map-title">
+          <h3>移动端开发与适配</h3>
+          <p>CSS3新特性、移动端概念、移动端适配、移动端事件、移动端开发调试等</p>
+        </div>
+        <div class="map-detail">
+          <a href="javascript:;">^</a>
+          <a href="javascript:;">前端开发环境及配置</a>
+          <a href="javascript:;">前端开发工具及快捷键</a>
+          <a href="javascript:;">HTML5各种标签及属性</a>
+          <a href="javascript:;">HTML的语义化</a>
+          <a href="javascript:;">HTML与CSS、JS的关系</a>
+          <a href="javascript:;">URL协议、路径基础</a>
+          <a href="javascript:;">...</a>
+        </div>
+      </li>
+      <li class="kk">
+        <div class="map-title">
+          <h3>NodeJS与Ajax</h3>
+          <p>nodejs后端开发模型、文件操作、流、网络模块、ES6常用语法、原生Ajax、jQuery Ajax、Express等</p>
+        </div>
+        <div class="map-detail">
+          <a href="javascript:;">^</a>
+          <a href="javascript:;">前端开发环境及配置</a>
+          <a href="javascript:;">前端开发工具及快捷键</a>
+          <a href="javascript:;">HTML5各种标签及属性</a>
+          <a href="javascript:;">HTML的语义化</a>
+          <a href="javascript:;">HTML与CSS、JS的关系</a>
+          <a href="javascript:;">URL协议、路径基础</a>
+          <a href="javascript:;">...</a>
+        </div>
+      </li>
+      <li class="kk">
+        <div class="map-title">
+          <h3>第一阶段项目实战</h3>
+          <p>敏捷的开发模式，完整的项目流程。技术要求：使用requirejs管理模块、综合运用各种组件、sass、art-template、jQuery Ajax、前端mvc架构、模板预编译、压缩打包、源代码版本管理等。</p>
+        </div>
+        <div class="map-detail">
+          <a href="javascript:;">^</a>
+          <a href="javascript:;">前端开发环境及配置</a>
+          <a href="javascript:;">前端开发工具及快捷键</a>
+          <a href="javascript:;">HTML5各种标签及属性</a>
+          <a href="javascript:;">HTML的语义化</a>
+          <a href="javascript:;">HTML与CSS、JS的关系</a>
+          <a href="javascript:;">URL协议、路径基础</a>
+          <a href="javascript:;">...</a>
+        </div>
+      </li>
+      <li class="kk">
+        <div class="map-title">
+          <h3>ES6、Webpack、Git、Json-Server、单元测试</h3>
+          <p>ES6各种新语法，webpack打包工具，git工作流，json-server后台接口快速搭建，单元测试覆盖率测试tdd等</p>
+        </div>
+        <div class="map-detail">
+          <a href="javascript:;">^</a>
+          <a href="javascript:;">前端开发环境及配置</a>
+          <a href="javascript:;">前端开发工具及快捷键</a>
+          <a href="javascript:;">HTML5各种标签及属性</a>
+          <a href="javascript:;">HTML的语义化</a>
+          <a href="javascript:;">HTML与CSS、JS的关系</a>
+          <a href="javascript:;">URL协议、路径基础</a>
+          <a href="javascript:;">...</a>
+        </div>
+      </li>
+      <li class="kk">
+        <div class="map-title">
+          <h3>Vue全家桶</h3>
+          <p>vue、生命周期、vue模板语法、vuerouter、vuex、vue-lic、Git集中式管理工作流等</p>
+        </div>
+        <div class="map-detail">
+          <a href="javascript:;">^</a>
+          <a href="javascript:;">前端开发环境及配置</a>
+          <a href="javascript:;">前端开发工具及快捷键</a>
+          <a href="javascript:;">HTML5各种标签及属性</a>
+          <a href="javascript:;">HTML的语义化</a>
+          <a href="javascript:;">HTML与CSS、JS的关系</a>
+          <a href="javascript:;">URL协议、路径基础</a>
+          <a href="javascript:;">...</a>
+        </div>
+      </li>
+      <li class="kk">
+        <div class="map-title">
+          <h3>第二阶段项目</h3>
+          <p>vue-cli+vue全家桶、git集中式工作流、git自动化集成脚本开发、git server搭建和配置权限、vue组件化实战等</p>
+        </div>
+        <div class="map-detail">
+          <a href="javascript:;">^</a>
+          <a href="javascript:;">前端开发环境及配置</a>
+          <a href="javascript:;">前端开发工具及快捷键</a>
+          <a href="javascript:;">HTML5各种标签及属性</a>
+          <a href="javascript:;">HTML的语义化</a>
+          <a href="javascript:;">HTML与CSS、JS的关系</a>
+          <a href="javascript:;">URL协议、路径基础</a>
+          <a href="javascript:;">...</a>
+        </div>
+      </li>
+      <li class="kk">
+        <div class="map-title">
+          <h3>React+React Router+Redux</h3>
+          <p>React框架、React Router、Redux、webpack等</p>
+        </div>
+        <div class="map-detail">
+          <a href="javascript:;">^</a>
+          <a href="javascript:;">前端开发环境及配置</a>
+          <a href="javascript:;">前端开发工具及快捷键</a>
+          <a href="javascript:;">HTML5各种标签及属性</a>
+          <a href="javascript:;">HTML的语义化</a>
+          <a href="javascript:;">HTML与CSS、JS的关系</a>
+          <a href="javascript:;">URL协议、路径基础</a>
+          <a href="javascript:;">...</a>
+        </div>
+      </li>
+      <li class="kk">
+        <div class="map-title">
+          <h3>Express MVC架构+MongoDB</h3>
+          <p>Express MVC架构、MongoDB操作、Mongoose ORM、后端数据处理等</p>
+        </div>
+        <div class="map-detail">
+          <a href="javascript:;">^</a>
+          <a href="javascript:;">前端开发环境及配置</a>
+          <a href="javascript:;">前端开发工具及快捷键</a>
+          <a href="javascript:;">HTML5各种标签及属性</a>
+          <a href="javascript:;">HTML的语义化</a>
+          <a href="javascript:;">HTML与CSS、JS的关系</a>
+          <a href="javascript:;">URL协议、路径基础</a>
+          <a href="javascript:;">...</a>
+        </div>
+      </li>
+      <li class="kk">
+        <div class="map-title">
+          <h3>GitHub 工作流</h3>
+          <p>github开源项目合作工作流等</p>
+        </div>
+        <div class="map-detail">
+          <a href="javascript:;">^</a>
+          <a href="javascript:;">前端开发环境及配置</a>
+          <a href="javascript:;">前端开发工具及快捷键</a>
+          <a href="javascript:;">HTML5各种标签及属性</a>
+          <a href="javascript:;">HTML的语义化</a>
+          <a href="javascript:;">HTML与CSS、JS的关系</a>
+          <a href="javascript:;">URL协议、路径基础</a>
+          <a href="javascript:;">...</a>
+        </div>
+      </li>
+      <li class="kk">
+        <div class="map-title">
+          <h3>全栈后端项目</h3>
+          <p>React+Nodejs 全栈项目等</p>
+        </div>
+        <div class="map-detail">
+          <a href="javascript:;">^</a>
+          <a href="javascript:;">前端开发环境及配置</a>
+          <a href="javascript:;">前端开发工具及快捷键</a>
+          <a href="javascript:;">HTML5各种标签及属性</a>
+          <a href="javascript:;">HTML的语义化</a>
+          <a href="javascript:;">HTML与CSS、JS的关系</a>
+          <a href="javascript:;">URL协议、路径基础</a>
+          <a href="javascript:;">...</a>
+        </div>
+      </li>
+      <li class="kk">
+        <div class="map-title">
+          <h3>面试加强与模拟面试</h3>
+          <p>简历指导、模拟面试、面试宝典、经典面试题回略等</p>
+        </div>
+        <div class="map-detail">
+          <a href="javascript:;">^</a>
+          <a href="javascript:;">前端开发环境及配置</a>
+          <a href="javascript:;">前端开发工具及快捷键</a>
+          <a href="javascript:;">HTML5各种标签及属性</a>
+          <a href="javascript:;">HTML的语义化</a>
+          <a href="javascript:;">HTML与CSS、JS的关系</a>
+          <a href="javascript:;">URL协议、路径基础</a>
+          <a href="javascript:;">...</a>
+        </div>
+      </li>
+    </ul>
+
+  </div>
+
+  <div class="companion clearfix">
+    <div class="companion-txt fl">
+      <h2 class="caption">Hello</h2>
+      <p class="company">公司:谦太祥和（北京）科技有限公司</p>
+      <p class="address">地址：北京市昌平区王庄工业园合福顺酒楼3楼</p>
+      <p class="slogan">JOIN US，让我们一起改变！</p>
+      <a href="javascript:;">加入我们</a>
+    </div>
+    <!-- S百度地图 -->
+    <div id="map" class="fl">
+      <div id="container3"></div>
+    </div>
+    <!-- E 百度地图 -->
+  </div>
+
+  <!-- S联系方式 -->
+  <div class="contact ">
+    <div class="contact-wrap clearfix">
+      <div class="logo fl">
+        <a href="javascript:;">
+          <img src="./img/logo.png" alt="">
+        </a>
+      </div>
+      <div class="contact-way fl">
+        <p>客服热线</p>
+        <p>4008-065-035（工作时间09:00-17:30）</p>
+        <p>商务合作</p>
+        <p>business@qtshe.com</p>
+      </div>
+      <!-- S 二维码 -->
+      <div class="code fl">
+        <img src="./img/qa.png" alt="">
+      </div>
+      <!-- E 二维码 -->
+    </div>
+  </div>
+  <!-- E联系方式 -->
+
+  <!-- S底部 -->
+  <div class="footer">
+    <p>浙公网安备 33011002012737号</p>
+  </div>
+  <!-- E底部 -->
+  <script>
+    var points = [{
+      id: 1,
+      lng: 116.315156,
+      lat: 40.159265,
+      title: "谦太祥和",
+      content: ["地址：北京市昌平区王庄工业园合福顺酒楼三楼", "电话：XXXXXXXXXXXX"]
+    }];
+    var map = new BaiduMap({
+      id: "container3",
+      level: 18, //  选填--地图级别--(默认15)
+      zoom: true, // 选填--是否启用鼠标滚轮缩放功能--(默认false)
+      type: ["地图", "卫星", "三维"], // 选填--显示地图类型--(默认不显示)
+      width: 320, // 选填--信息窗口width--(默认自动调整)
+      height: 70, // 选填--信息窗口height--(默认自动调整)
+      titleClass: "title",
+      contentClass: "content",
+      showPanorama: true, // 是否显示全景控件(默认false)
+      showMarkPanorama: true, // 是否显示标注点全景图(默认false)
+      showLabel: false, // 是否显示文本标注(默认false)
+      mapStyle: "normal", // 默认normal,可选dark,light
+      centerPoint: { // 中心点经纬度
+        lng: 116.314640,
+        lat: 40.159115
+      },
+      index: 1, // 开启对应的信息窗口，默认-1不开启
+      animate: true, // 是否开启坠落动画，默认false
+      points: points, // 标注点--id(唯一标识)
+    });
+  </script>
+</body>
+
+</html>

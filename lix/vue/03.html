@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+       <input type="button" value="开始" @click="start">
+       <input type="button" value="终止" @click="stop">
+       <hr>
+       <h1>{{msg}}</h1>
+    </div>
+    <script src="./lib/vue.js"></script>
+    <script>
+    var vm = new Vue({
+        el:'#app',
+        data:{
+            msg:'曲蔚然山地自行车',
+            intervalId:null
+        },
+        methods:{
+            start(){
+                if(this.intervalId !==null) return
+                this.intervalId=setInterval(()=>{
+                    const header = this.msg.substring(0,1)
+                    const body = this.msg.substring(1)
+                    this.msg = body +header
+                },300)
+            },
+            stop(){
+                clearInterval(this.intervalId)
+                this.intervalId=null
+            }
+            
+        }
+    })
+    </script>
+</body>
+
+</html>

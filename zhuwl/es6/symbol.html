@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>symbol</title>
+</head>
+
+<body>
+  <script>
+    // Symbol 不用new
+    // Symbol 返回的是唯一的值 *可以当作key值
+    // typeof  检测七种 number ,string,boolean ,Object ,underfined,function,symbol
+    // 单独的数据类型
+    // 如果symbol作为key值，试用for in 循环不出来
+    let sym = Symbol('aaa')
+    console.log(sym)
+    let json = {
+      a: 'aple',
+      b: 'banans',
+      [sym]: 'bean'
+    }
+    for (let key in json) {
+      console.log(key)
+    }
+  </script>
+</body>
+
+</html>

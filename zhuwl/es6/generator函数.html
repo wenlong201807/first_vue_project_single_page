@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>generator</title>
+</head>
+
+<body>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script>
+    // 解决异步深度嵌套 
+    function* gen() {
+      let a = 123;
+      console.log(a);
+      yield 'welcome ' + a;
+      let m = yield 'to';
+      console.log(m);
+      return 'zhuwenlong'
+    }
+
+    let g = gen();
+    console.log(g.next())// 第一次调用{value: "welcome", done: false}
+    console.log(g.next())// 第二次调用 {value: "to", done: false}
+    console.log(g.next(8888888))// 第三次调用{value: "zhuwenlong", done: true}
+    console.log(g.next())// 第三次调用***没有{value: undefined, done: true}
+    // 上述是手动调用**麻烦
+
+    // for of  自动遍历yield 部分的内容，但是return后面的内容不能遍历出来
+    let ggg = gen()
+    for (let value of ggg) {
+      console.log(value)
+    }
+
+    // 可以与解构赋值连在一起使用
+    let [a, b, c] = gen()
+    console.log(a, b, c)
+
+    // 剩余参数使用
+    let [aa, ...bb] = gen()
+
+    // 剩余参数是数组
+    console.log(aa, bb)//welcome ["to"]
+
+    // 扩展运算符
+    console.log(...gen())
+
+    // 转成数组的方法 Array.from()
+    console.log(Array.from(gen()))  //["welcome", "to"]
+
+
+    // 解决异步问题综合
+    //1.回调掉函数
+    // 2.事件监听
+    // 3.发布订阅
+    // 4. Promise对象
+
+    // 配合后台数据调用*****超级实用
+    // 请求数据的地址
+    // ***http://127.0.0.1:5500/data.json
+    function* qq() {
+      let val = yield 'itstrive';  // {value:itstrive, done: false}
+      console.log(val) // 'uu'
+      yield axios.get('/data.json');
+    }
+    let t = qq(); // 返回的是一个遍历器对象。 next方法
+    let n1 = t.next();//存储之前的东西***重点//{value: "itstrive", done: false}
+    let n2 = t.next('itstrive').value;
+    console.log(n2)//Promise {<pending>}
+    // 必须使用在线地址，不能使用磁盘路径
+    n2.then(res => {
+      console.log(res.data)//{list: Array(5)}
+    });
+    let n3 = t.next();
+    // 可以将值保存起来
+    console.log(n3)
+    console.log(n2)
+    console.log(n1)
+  </script>
+</body>
+
+</html>
